@@ -63,18 +63,139 @@ Both are equivalent
 ```jsx
 class Dave extends React.Component {
   render() {
-    return <p>"What do you think you are doing, Dave?"</p>;
+    return <p>What do you think you are doing, Dave?</p>;
   }
 }
 ```
 
 ```jsx
 const Dave = () => {
-  return <p>"What do you think you are doing, Dave?"</p>;
+  return <p>What do you think you are doing, Dave?</p>;
 };
+```
+
+### Component structure
+
+```jsx
+// IMPORTS
+import React from "react";
+
+// COMPONENT
+class Dave extends React.Component {
+  render() {
+    return <p>What do you think you are doing, Dave?</p>;
+  }
+}
+
+// EXPORT
+export default Dave;
+```
+
+### To JSX or to not JSX...
+
+#### With only one tag
+
+Both are equivalent
+
+```jsx
+<p>What do you think you are doing, Dave?</p>
+```
+
+```js
+React.createElement("p", {}, "What do you think you are doing, Dave?");
+```
+
+#### With nested tags
+
+Both are equivalent
+
+```jsx
+<div>
+  <p>What do you think you are doing, Dave?</p>
+</div>
+```
+
+```js
+React.createElement(
+  "div",
+  {},
+  React.createElement("p", {}, "What do you think you are doing, Dave?")
+);
+```
+
+### JSX Gotchas!
+
+#### Use `className` instead of `class`
+
+```jsx
+return <p className="my-class">What do you think you are doing, Dave?</p>;
+```
+
+#### Beware ASI (Automatic Semicolon Insertion)
+
+If you leave `return` alone in one line a semicolon is automatically inserted! Use `return ( .... )`.
+
+```jsx
+return (
+  <div>
+    <p className="my-class">What do you think you are doing, Dave?</p>
+  </div>
+);
 ```
 
 ## 2. `props` and `state`
 
 - `state`: where the data lives.
 - `props`: a way to get data (`state`) into a component.
+
+## 3. Functional Stateless Components
+
+Five of them are equivalent
+
+```jsx
+class Header extends React.Component {
+  render() {
+    return (
+      <h3 className="tagline">
+        <span>{this.props.tagline}</span>
+      </h3>
+    );
+  }
+}
+```
+
+```jsx
+const Header = props => {
+  return (
+    <h3 className="tagline">
+      <span>{props.tagline}</span>
+    </h3>
+  );
+};
+```
+
+```jsx
+const Header = ({ tagline }) => {
+  return (
+    <h3 className="tagline">
+      <span>{tagline}</span>
+    </h3>
+  );
+};
+```
+
+```jsx
+const Header = props => (
+  <h3 className="tagline">
+    <span>{props.tagline}</span>
+  </h3>
+);
+```
+
+```jsx
+const Header = ({ tagline }) => (
+  <h3 className="tagline">
+    <span>{tagline}</span>
+  </h3>
+);
+```
