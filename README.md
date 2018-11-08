@@ -73,3 +73,8 @@ const Dave = () => {
   return <p>"What do you think you are doing, Dave?"</p>;
 };
 ```
+
+## 2. `props` and `state`
+
+- `state`: where the data lives.
+- `props`: a way to get data (`state`) into a component.
