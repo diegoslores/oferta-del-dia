@@ -6,10 +6,22 @@ class AddFishForm extends React.Component {
   statusRef = React.createRef();
   descRef = React.createRef();
   imageRef = React.createRef();
+
   createFish = event => {
     //stop the form from submitting
     event.preventDefault();
-    console.log("cosas");
+    // create fish with form data
+    const fish = {
+      name: this.nameRef.current.value,
+      price: parseFloat(this.priceRef.current.value),
+      status: this.statusRef.current.value,
+      desc: this.descRef.current.value,
+      image: this.imageRef.current.value
+    };
+    //send fish to app component(where state lives)
+    this.props.addFish(fish);
+    //refresh form
+    event.currentTarget.reset();
   };
 
   render() {
