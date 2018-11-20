@@ -5,7 +5,7 @@ Playing with React, Firebase and friends.
 ## 👾🤖🚀 Clone, install... GO 🚀🤖👾
 
 ```
-❯ git clone git@github.com:diegoslores/oferta-del-dia.git
+❯ git clone git@github.com:davidgchaves/oferta-del-dia.git
 ❯ cd oferta-del-dia
 ❯ npm install
 ```
@@ -40,7 +40,7 @@ v8.12.0
 ### How can I sync the project with a remote GitHub repository
 
 ```
-❯ git remote add origin git@github.com:diegoslores/oferta-del-dia.git
+❯ git remote add origin git@github.com:davidgchaves/oferta-del-dia.git
 ❯ git push -u origin master
 ```
 
@@ -49,6 +49,17 @@ v8.12.0
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) extension for Firefox.
 - [CMDer](http://cmder.net/): Command Line Emulator for Windows.
 - [Create React App 2](https://github.com/facebook/create-react-app)
+
+### Troubleshooting
+
+Try
+
+```
+❯ rm -rf node_modules/
+❯ rm -rf package-lock.json
+❯ npm install
+❯ npm start
+```
 
 ## 1. Intro to React
 
@@ -171,31 +182,4 @@ const Header = props => {
       <span>{props.tagline}</span>
     </h3>
   );
-};
-```
-
-```jsx
-const Header = ({ tagline }) => {
-  return (
-    <h3 className="tagline">
-      <span>{tagline}</span>
-    </h3>
-  );
-};
-```
-
-```jsx
-const Header = props => (
-  <h3 className="tagline">
-    <span>{props.tagline}</span>
-  </h3>
-);
-```
-
-```jsx
-const Header = ({ tagline }) => (
-  <h3 className="tagline">
-    <span>{tagline}</span>
-  </h3>
-);
 ```
