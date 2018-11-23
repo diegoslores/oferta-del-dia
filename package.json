@@ -9,6 +9,8 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "autoprefixer-stylus": "0.14.0",
+    "firebase": "^5.5.9",
+    "re-base": "^4.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "serve": "^10.1.1",

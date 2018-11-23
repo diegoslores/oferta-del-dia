@@ -20,7 +20,7 @@ class Order extends React.Component {
     if (isAvailable) {
       return (
         <li key={orderKey}>
-          {quantity} lbs {name} {formatPrice(price * quantity)}
+          {quantity} lbs {name} <span>{formatPrice(price * quantity)}</span>
         </li>
       );
     } else {
