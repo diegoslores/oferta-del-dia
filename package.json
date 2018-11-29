@@ -18,6 +18,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
+    "start": "react-scripts start",
     "unfrak": "rm -rf node_modules && rm package-lock.json && npm install",
     "now-build": "react-scripts build && mv build dist",
     "deploy:netlify": "npm run build && cp _redirects build/ && netlify deploy",
