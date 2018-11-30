@@ -4,8 +4,13 @@ import Order from "./Order";
 import samplefishes from "../sample-fishes";
 import Menu from "./Menu";
 import base from "../base";
+import PropTypes from "prop-types";
 
 class App extends React.Component {
+  static propTypes = {
+    storeId: PropTypes.string
+  };
+
   state = {
     fishes: {},
     order: {}

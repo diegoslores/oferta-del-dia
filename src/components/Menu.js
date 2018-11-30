@@ -1,8 +1,13 @@
 import React from "react";
 import Fish from "./Fish";
 import Header from "./Header";
+import PropTypes from "prop-types";
 
 class Menu extends React.Component {
+  static propTypes = {
+    fishes: PropTypes.object.isRequired,
+    addToOrder: PropTypes.func.isRequired
+  };
   render() {
     return (
       <div className="menu">
