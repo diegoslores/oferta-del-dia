@@ -41,7 +41,6 @@ class EditFishForm extends React.Component {
         />
         <input
           type="text"
-          d
           name="price"
           onChange={this.handleChange}
           value={this.props.fish.price}
